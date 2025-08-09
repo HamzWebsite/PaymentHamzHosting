@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Digital Hamz Official</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: url('Payment.jpg/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #0ff;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(0, 0, 20, 0.8);
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+                        0 0 40px rgba(0, 255, 255, 0.3),
+                        0 0 60px rgba(0, 255, 255, 0.1);
+            padding: 30px;
+            animation: glow 2s infinite alternate;
+            position: relative;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+                            0 0 40px rgba(0, 255, 255, 0.3),
+                            0 0 60px rgba(0, 255, 255, 0.1);
+            }
+            to {
+                box-shadow: 0 0 25px rgba(0, 255, 255, 0.7),
+                            0 0 50px rgba(0, 255, 255, 0.5),
+                            0 0 75px rgba(0, 255, 255, 0.3);
+            }
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #0ff;
+            letter-spacing: 3px;
+        }
+        
+        .payment-method {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #0ff;
+            padding-bottom: 20px;
+        }
+        
+        .payment-method h2 {
+            color: #0ff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #0ff;
+        }
+        
+        .payment-info {
+            background: rgba(0, 20, 30, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #0ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-info:hover {
+            background: rgba(0, 30, 40, 0.8);
+            transform: translateX(5px);
+        }
+        
+        .led-text {
+            font-family: 'Orbitron', sans-serif;
+            color: #0ff;
+            text-shadow: 0 0 5px #0ff;
+            animation: blink 1s infinite alternate;
+        }
+        
+        @keyframes blink {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+        
+        .copy-btn {
+            background: rgba(0, 255, 255, 0.2);
+            color: #0ff;
+            border: 1px solid #0ff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 10px #0ff;
+        }
+        
+        .not-available {
+            color: #f55;
+            font-style: italic;
+            text-shadow: 0 0 5px #f55;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #0aa;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 20, 30, 0.8);
+            padding: 10px;
+            border-radius: 50%;
+            border: 1px solid #0ff;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .music-control i {
+            color: #0ff;
+            font-size: 20px;
+        }
+        
+        .scan-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent 50%, rgba(0, 255, 255, 0.1) 50%);
+            background-size: 100% 4px;
+            z-index: -1;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 1px solid #0ff;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+            transform: scale(1.05);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+        
+        .confirmation-box {
+            background: rgba(0, 30, 40, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #0ff;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="scan-animation"></div>
+    
+    <div class="container">
+        <h1 class="led-text">DIGITAL PAYMENT GATEWAY</h1>
+        
+        <div class="payment-method">
+            <h2 class="led-text">DANA</h2>
+            <div class="payment-info">
+                <span class="led-text">Nomor DANA: 082157884782</span>
+                <button class="copy-btn" onclick="copyToClipboard('082157884782')"><i class="fas fa-copy"></i> Copy</button>
+            </div>
+        </div>
+        
+        <div class="payment-method">
+            <h2 class="led-text">GOPAY</h2>
+            <div class="payment-info">
+                <span class="not-available">Tidak tersedia</span>
+            </div>
+        </div>
+        
+        <div class="payment-method">
+            <h2 class="led-text">OVO</h2>
+            <div class="payment-info">
+                <span class="not-available">Tidak tersedia</span>
+            </div>
+        </div>
+        
+        <div class="payment-method">
+            <h2 class="led-text">QRIS</h2>
+            <div class="payment-info">
+                <span class="not-available">Tidak tersedia</span>
+            </div>
+        </div>
+        
+        <div class="confirmation-box">
+            <h3 class="led-text">KONFIRMASI PEMBAYARAN</h3>
+            <p>Setelah melakukan pembayaran, harap konfirmasi dengan mengirim bukti transfer ke:</p>
+            <a href="https://wa.me/6282199172613" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp: 082199172613
+            </a>
+            <p style="margin-top: 10px;">Klik tombol di atas untuk langsung terhubung ke WhatsApp</p>
+        </div>
+        
+        <div class="footer led-text">
+            <p>© 2025 Payment Digital Hamz Official</p>
+        </div>
+    </div>
+    
+    <div class="music-control" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="Kamim.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // Auto play music
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.3;
+            
+            // Chrome policy requires user interaction for audio
+            document.body.addEventListener('click', function() {
+                music.play().catch(e => console.log("Auto-play prevented: ", e));
+            }, { once: true });
+        });
+        
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const control = document.querySelector('.music-control i');
+            
+            if (music.paused) {
+                music.play();
+                control.classList.remove('fa-music');
+                control.classList.add('fa-pause');
+            } else {
+                music.pause();
+                control.classList.remove('fa-pause');
+                control.classList.add('fa-music');
+            }
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Nomor berhasil disalin: ' + text);
+            }, function(err) {
+                console.error('Gagal menyalin teks: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
